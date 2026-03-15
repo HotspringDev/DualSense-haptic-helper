@@ -68,8 +68,9 @@ int main(int argc, char* argv[]) {
     for (int i = 0; i < nAudioDevices; i++) {
         const char* name = SDL_GetAudioDeviceName(i, 0);
         printf("  [%d] %s\n", i, name);
-        if (strstr(name, "Wireless") || strstr(name, "DualSense") || strstr(name, "Controller")) {
+        if (strstr(name, "Wireless") || strstr(name, "DualSense")) {
             ds5_audio_name = name;
+            break;
         }
     }
 
